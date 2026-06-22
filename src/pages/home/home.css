@@ -1,0 +1,248 @@
+/*corpo*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:black;
+}
+
+
+.home{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+h2{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+h1,
+h2{
+    animation:flicker 1s infinite;
+}
+@keyframes flicker{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.7;
+    }
+
+}
+/*TELA*/
+.connecting{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.screen{
+    position:relative;
+
+    width:800px;
+    height:500px;
+
+    padding:40px;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle, #062b14 0%, #000000 80%);
+
+    color:#00ff66;
+
+    border:2px solid #00ff66;
+
+    box-shadow:
+    0 0 15px #00ff66,
+    inset 0 0 20px rgba(0,255,100,.3);
+
+    font-family:monospace;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.screen::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(0,255,100,.08) 3px,
+        rgba(0,255,100,.08) 4px
+    );
+
+    pointer-events:none;
+}
+.screen::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    height:80px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0,255,100,.2),
+        transparent
+    );
+
+    filter:blur(2px);
+
+    animation:scan 4s linear infinite;
+}
+@keyframes scan{
+
+    from{
+        top:-150px;
+    }
+
+    to{
+        top:100%;
+    }
+
+}
+input{
+    width:400px;
+
+    min-height:45px;
+
+    padding:12px;
+
+    background:black;
+
+    border:2px solid #00ff66;
+
+    color:#00ff66;
+}
+
+button{
+    width:100px;
+    padding:10px;
+    background: black;
+    border: 2px solid #00ff66;
+    color: #00ff66;
+    cursor:pointer;
+}
+/*scroll interno do formulario*/
+.form-scroll{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+
+    overflow-y:auto;
+
+    padding-right:15px;
+
+    height:100%;
+}
+label{
+    font-weight:bold;
+    color:#00ff66;
+}
+
+small{
+    color:#7cffaa;
+    font-size:12px;
+    margin-top:-8px;
+}
+/*botões de selação*/
+.select-button{
+    width:400px;
+
+    background:black;
+
+    border:2px solid #00ff66;
+
+    color:#00ff66;
+
+    padding:10px;
+
+    text-align:left;
+}
+/*placeholder do formulario*/
+input::placeholder{
+    color:#7f7f7f;
+}
+/*botao iniciar*/
+.start-button{
+    width:200px;
+
+    margin-top:20px;
+}
+/*barra lateral de rolagem*/
+.form-scroll::-webkit-scrollbar{
+    width:8px;
+}
+
+.form-scroll::-webkit-scrollbar-track{
+    background:black;
+}
+
+.form-scroll::-webkit-scrollbar-thumb{
+    background:#00ff66;
+}
+/*tela de atenção*/
+.warning-scroll{
+    flex:1;
+
+    overflow-y:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    padding-right:10px;
+}
+/*botoes de opções*/
+.options-box{
+    width:400px;
+
+    display:flex;
+    flex-direction:column;
+
+    border:2px solid #00ff66;
+
+    background:black;
+}
+.option{
+    width:100%;
+
+    border:none;
+
+    border-bottom:1px solid #00ff66;
+
+    background:black;
+
+    color:#00ff66;
+
+    text-align:left;
+
+    padding:10px;
+}
+.option:hover{
+    background:#00ff66;
+    color:black;
+}
